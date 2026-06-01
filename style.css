@@ -1,0 +1,203 @@
+/* RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR / HEADER */
+header {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* MAIN CONTAINER */
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem 6rem 1rem; /* Extra bottom padding for sticky ad bar */
+}
+
+/* GENERATOR BOX (INPUT ZONE) */
+.generator-container {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-group label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #58a6ff;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    background-color: #0d1117;
+    border: 2px solid #30363d;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+.btn-generate {
+    background-color: #238636;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    align-self: flex-start;
+}
+
+.btn-generate:hover {
+    background-color: #2ea043;
+}
+
+.btn-generate:active {
+    transform: scale(0.98);
+}
+
+/* OUTPUT GRID */
+.output-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Hidden helper class to prevent blank cards on load */
+.hidden {
+    display: none !important;
+}
+
+/* CARDS */
+.card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    border-color: #58a6ff;
+}
+
+.card-label {
+    font-size: 0.85rem;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-text {
+    font-size: 1.25rem;
+    color: #ffffff;
+    word-break: break-all;
+    user-select: all;
+}
+
+.btn-copy {
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.btn-copy:hover {
+    background-color: #30363d;
+    color: #ffffff;
+}
+
+/* AD SLOTS - Safe heights to prevent Layout Shifts (CLS) */
+.ad-banner-slot {
+    width: 100%;
+    max-width: 728px;
+    height: 90px;
+    margin: 2rem auto;
+    background-color: #161b22;
+    border: 1px dashed #30363d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sticky-bottom-ad {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #161b22;
+    border-top: 2px solid #30363d;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    header h1 { font-size: 2rem; }
+    .btn-generate { width: 100%; }
+    .output-grid { grid-template-columns: 1fr; }
+    .ad-banner-slot { max-width: 320px; height: 50px; } /* Mobile banner scale */
+}
