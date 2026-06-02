@@ -4,9 +4,31 @@ self.options = {
 }
 self.lary = ""
 importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw')
+
 self.options = {
     "domain": "5gvci.com",
     "zoneId": 11090290
+}
+self.lary = ""
+importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw')
+
+self.options = {
+    "domain": "5gvci.com",
+    "zoneId": 11090260
+}
+self.lary = ""
+importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw')
+
+self.options = {
+    "domain": "5gvci.com",
+    "zoneId": 11090259
+}
+self.lary = ""
+importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw')
+
+self.options = {
+    "domain": "5gvci.com",
+    "zoneId": 11090258
 }
 self.lary = ""
 importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw')
